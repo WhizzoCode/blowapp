@@ -1,22 +1,25 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  blowapp
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue';
-
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
+  name: 'App'
 };
 </script>
 
 <style>
+* {
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+}
+
 :root {
+  background-color: var(--gray-10);
+  color: var(--gray-90);
   font-family: 'Source Sans 3 VF', sans-serif;
+  font-size: 14px;
 
   --gray-0:   hsl(0, 0%,   0%);
   --gray-5:   hsl(0, 0%,   5%);
@@ -39,11 +42,5 @@ export default {
   --gray-90:  hsl(0, 0%,  90%);
   --gray-95:  hsl(0, 0%,  95%);
   --gray-100: hsl(0, 0%, 100%);
-}
-
-#app {
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
 }
 </style>
