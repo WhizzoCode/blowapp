@@ -1,7 +1,9 @@
 <template>
   <Menubar />
   <div id="frames">
-    <div id="left-pane" class="pane"></div>
+    <div id="left-pane" class="pane">
+      <NodeTree :treeitems=treeItems />
+    </div>
     <div id="content"></div>
     <div id="right-pane" class="pane"></div>
   </div>
@@ -9,11 +11,74 @@
 
 <script>
 import Menubar from './components/Menubar.vue';
+import NodeTree from './components/NodeTree.vue';
 
 export default {
   name: 'App',
   components: {
-    Menubar
+    Menubar,
+    NodeTree
+  },
+  data() {
+    return {
+      treeItems: [
+        {id: '0', name: 'Galería', children: [
+          {id: '0-0', name: '2021', children: [
+            {id: '0-0-0', name: '01', children: [
+              {id: '0-0-0-0', name: '01'},
+              {id: '0-0-0-1', name: '02'},
+              {id: '0-0-0-2', name: '03'},
+              {id: '0-0-0-3', name: '04'},
+              {id: '0-0-0-4', name: '05'}
+            ]},
+            {id: '0-0-1', name: '02', children: [
+              {id: '0-0-1-0', name: '01'},
+              {id: '0-0-1-1', name: '02'},
+              {id: '0-0-1-2', name: '03'},
+              {id: '0-0-1-3', name: '04'},
+              {id: '0-0-1-4', name: '05'}
+            ]},
+            {id: '0-0-2', name: '03', children: [
+              {id: '0-0-2-0', name: '01'},
+              {id: '0-0-2-1', name: '02'},
+              {id: '0-0-2-2', name: '03'},
+              {id: '0-0-2-3', name: '04'},
+              {id: '0-0-2-4', name: '05'}
+            ]}
+          ]},
+          {id: '0-1', name: '2022', children: [
+            {id: '0-1-0', name: '01', children: [
+              {id: '0-1-0-0', name: '01'},
+              {id: '0-1-0-1', name: '02'},
+              {id: '0-1-0-2', name: '03'},
+              {id: '0-1-0-3', name: '04'},
+              {id: '0-1-0-4', name: '05'}
+            ]},
+            {id: '0-1-1', name: '02', children: [
+              {id: '0-1-1-0', name: '01'},
+              {id: '0-1-1-1', name: '02'},
+              {id: '0-1-1-2', name: '03'},
+              {id: '0-1-1-3', name: '04'},
+              {id: '0-1-1-4', name: '05'}
+            ]},
+            {id: '0-1-2', name: '03', children: [
+              {id: '0-1-2-0', name: '01'},
+              {id: '0-1-2-1', name: '02'},
+              {id: '0-1-2-2', name: '03'},
+              {id: '0-1-2-3', name: '04'},
+              {id: '0-1-2-4', name: '05'}
+            ]}
+          ]}
+        ]},
+        {id: '1', name: 'Importaciones', children: [
+          {id: '1-0', name: '2021-03-01'},
+          {id: '1-1', name: '2021-03-02'},
+          {id: '1-2', name: '2021-03-03'},
+          {id: '1-3', name: '2021-03-04'},
+        ]},
+        {id: '2', name: 'Papelera'}
+      ]
+    };
   }
 };
 </script>
