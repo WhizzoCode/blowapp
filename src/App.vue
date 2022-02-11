@@ -1,15 +1,20 @@
 <template>
-  <div id="menubar">menubar</div>
+  <Menubar />
   <div id="frames">
-    <div id="left-pane" class="pane">left-pane</div>
-    <div id="content">content</div>
-    <div id="right-pane" class="pane">right-pane</div>
+    <div id="left-pane" class="pane"></div>
+    <div id="content"></div>
+    <div id="right-pane" class="pane"></div>
   </div>
 </template>
 
 <script>
+import Menubar from './components/Menubar.vue';
+
 export default {
-  name: 'App'
+  name: 'App',
+  components: {
+    Menubar
+  }
 };
 </script>
 
@@ -56,10 +61,6 @@ html, body, #app {
 #app {
   display: flex;
   flex-direction: column;
-}
-
-#menubar {
-  background-color: var(--gray-20);
 }
 
 #frames {
