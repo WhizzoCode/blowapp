@@ -1,5 +1,10 @@
 <template>
-  blowapp
+  <div id="menubar">menubar</div>
+  <div id="frames">
+    <div id="left-pane" class="pane">left-pane</div>
+    <div id="content">content</div>
+    <div id="right-pane" class="pane">right-pane</div>
+  </div>
 </template>
 
 <script>
@@ -42,5 +47,32 @@ export default {
   --gray-90:  hsl(0, 0%,  90%);
   --gray-95:  hsl(0, 0%,  95%);
   --gray-100: hsl(0, 0%, 100%);
+}
+
+html, body, #app {
+  height: 100%;
+}
+
+#app {
+  display: flex;
+  flex-direction: column;
+}
+
+#menubar {
+  background-color: var(--gray-20);
+}
+
+#frames {
+  flex-grow: 1;
+  display: flex;
+}
+
+#content {
+  flex-grow: 1;
+}
+
+.pane {
+  width: 20rem;
+  background-color: var(--gray-15);
 }
 </style>
