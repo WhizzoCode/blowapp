@@ -1,11 +1,9 @@
 <template>
-  <div class="menubar">
-    <ul>
-      <li v-for="item in menubarItems" :key="item.id">
-        {{ item.name }}
-      </li>
-    </ul>
-  </div>
+  <ul>
+    <li v-for="item in menubarItems" :key="item.id">
+      {{ item.name }}
+    </li>
+  </ul>
 </template>
 
 <script>
@@ -28,11 +26,8 @@ export default {
 </script>
 
 <style scoped>
-.menubar {
-  background-color: var(--gray-20);
-}
-
 ul {
+  background-color: var(--gray-20);
   display: flex;
   list-style: none;
 }
