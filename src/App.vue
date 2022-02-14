@@ -2,7 +2,7 @@
   <Menubar />
   <div id="frames">
     <div id="left-pane" class="pane">
-      <NodeTree :treeitems=treeItems />
+      <Tree :treeitems=treeItems />
     </div>
     <div id="content"></div>
     <div id="right-pane" class="pane"></div>
@@ -11,13 +11,13 @@
 
 <script>
 import Menubar from './components/Menubar.vue';
-import NodeTree from './components/NodeTree.vue';
+import Tree from './components/Tree.vue';
 
 export default {
   name: 'App',
   components: {
     Menubar,
-    NodeTree
+    Tree
   },
   data() {
     return {
