@@ -2,9 +2,9 @@
   <Menubar />
   <div id="frames">
     <div id="left-pane" class="pane">
-      <NodeTree :treeitems="galleryTree" />
-      <NodeTree :treeitems="importsTree" />
-      <NodeTree :treeitems="recycleBinTree" />
+      <NodeTreeDetails :treeitems="galleryTree" />
+      <NodeTreeDetails :treeitems="importsTree" />
+      <NodeTreeDetails :treeitems="recycleBinTree" />
     </div>
     <div id="content"></div>
     <div id="right-pane" class="pane"></div>
@@ -13,75 +13,75 @@
 
 <script>
 import Menubar from './components/Menubar.vue';
-import NodeTree from './components/NodeTree.vue';
+import NodeTreeDetails from './components/NodeTreeDetails.vue';
 
 export default {
   name: 'App',
   components: {
     Menubar,
-    NodeTree
+    NodeTreeDetails
   },
   data() {
     return {
       galleryTree: {
-        id: 'Galería', name: 'Galería', children: [
-          {id: 'Galería/2021', name: '2021', children: [
-            {id: 'Galería/2021/01', name: '01', children: [
-              {id: 'Galería/2021/01/01', name: '01'},
-              {id: 'Galería/2021/01/02', name: '02'},
-              {id: 'Galería/2021/01/03', name: '03'},
-              {id: 'Galería/2021/01/04', name: '04'},
-              {id: 'Galería/2021/01/05', name: '05'}
+        path: 'Galería', name: 'Galería', children: [
+          {path: 'Galería/2021', name: '2021', children: [
+            {path: 'Galería/2021/01', name: '01', children: [
+              {path: 'Galería/2021/01/01', name: '01'},
+              {path: 'Galería/2021/01/02', name: '02'},
+              {path: 'Galería/2021/01/03', name: '03'},
+              {path: 'Galería/2021/01/04', name: '04'},
+              {path: 'Galería/2021/01/05', name: '05'}
             ]},
-            {id: 'Galería/2021/02', name: '02', children: [
-              {id: 'Galería/2021/02/01', name: '01'},
-              {id: 'Galería/2021/02/02', name: '02'},
-              {id: 'Galería/2021/02/03', name: '03'},
-              {id: 'Galería/2021/02/04', name: '04'},
-              {id: 'Galería/2021/02/05', name: '05'}
+            {path: 'Galería/2021/02', name: '02', children: [
+              {path: 'Galería/2021/02/01', name: '01'},
+              {path: 'Galería/2021/02/02', name: '02'},
+              {path: 'Galería/2021/02/03', name: '03'},
+              {path: 'Galería/2021/02/04', name: '04'},
+              {path: 'Galería/2021/02/05', name: '05'}
             ]},
-            {id: 'Galería/2021/03', name: '03', children: [
-              {id: 'Galería/2021/03/01', name: '01'},
-              {id: 'Galería/2021/03/02', name: '02'},
-              {id: 'Galería/2021/03/03', name: '03'},
-              {id: 'Galería/2021/03/04', name: '04'},
-              {id: 'Galería/2021/03/05', name: '05'}
+            {path: 'Galería/2021/03', name: '03', children: [
+              {path: 'Galería/2021/03/01', name: '01'},
+              {path: 'Galería/2021/03/02', name: '02'},
+              {path: 'Galería/2021/03/03', name: '03'},
+              {path: 'Galería/2021/03/04', name: '04'},
+              {path: 'Galería/2021/03/05', name: '05'}
             ]}
           ]},
-          {id: 'Galería/2022', name: '2022', children: [
-            {id: 'Galería/2022/01', name: '01', children: [
-              {id: 'Galería/2022/01/01', name: '01'},
-              {id: 'Galería/2022/01/02', name: '02'},
-              {id: 'Galería/2022/01/03', name: '03'},
-              {id: 'Galería/2022/01/04', name: '04'},
-              {id: 'Galería/2022/01/05', name: '05'}
+          {path: 'Galería/2022', name: '2022', children: [
+            {path: 'Galería/2022/01', name: '01', children: [
+              {path: 'Galería/2022/01/01', name: '01'},
+              {path: 'Galería/2022/01/02', name: '02'},
+              {path: 'Galería/2022/01/03', name: '03'},
+              {path: 'Galería/2022/01/04', name: '04'},
+              {path: 'Galería/2022/01/05', name: '05'}
             ]},
-            {id: 'Galería/2022/02', name: '02', children: [
-              {id: 'Galería/2022/02/01', name: '01'},
-              {id: 'Galería/2022/02/02', name: '02'},
-              {id: 'Galería/2022/02/03', name: '03'},
-              {id: 'Galería/2022/02/04', name: '04'},
-              {id: 'Galería/2022/02/05', name: '05'}
+            {path: 'Galería/2022/02', name: '02', children: [
+              {path: 'Galería/2022/02/01', name: '01'},
+              {path: 'Galería/2022/02/02', name: '02'},
+              {path: 'Galería/2022/02/03', name: '03'},
+              {path: 'Galería/2022/02/04', name: '04'},
+              {path: 'Galería/2022/02/05', name: '05'}
             ]},
-            {id: 'Galería/2022/03', name: '03', children: [
-              {id: 'Galería/2022/03/01', name: '01'},
-              {id: 'Galería/2022/03/02', name: '02'},
-              {id: 'Galería/2022/03/03', name: '03'},
-              {id: 'Galería/2022/03/04', name: '04'},
-              {id: 'Galería/2022/03/05', name: '05'}
+            {path: 'Galería/2022/03', name: '03', children: [
+              {path: 'Galería/2022/03/01', name: '01'},
+              {path: 'Galería/2022/03/02', name: '02'},
+              {path: 'Galería/2022/03/03', name: '03'},
+              {path: 'Galería/2022/03/04', name: '04'},
+              {path: 'Galería/2022/03/05', name: '05'}
             ]}
           ]}
         ]
       },
       importsTree: {
-        id: 'Importaciones', name: 'Importaciones', children: [
-          {id: 'Importaciones/2021-03-01', name: '2021-03-01'},
-          {id: 'Importaciones/2021-03-02', name: '2021-03-02'},
-          {id: 'Importaciones/2021-03-03', name: '2021-03-03'},
-          {id: 'Importaciones/2021-03-04', name: '2021-03-04'},
+        path: 'Importaciones', name: 'Importaciones', children: [
+          {path: 'Importaciones/2021-03-01', name: '2021-03-01'},
+          {path: 'Importaciones/2021-03-02', name: '2021-03-02'},
+          {path: 'Importaciones/2021-03-03', name: '2021-03-03'},
+          {path: 'Importaciones/2021-03-04', name: '2021-03-04'},
         ]
       },
-      recycleBinTree: {id: 'Papelera', name: 'Papelera'}
+      recycleBinTree: {path: 'Papelera', name: 'Papelera'}
     };
   }
 };
