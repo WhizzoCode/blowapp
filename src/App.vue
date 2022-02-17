@@ -2,7 +2,9 @@
   <Menubar />
   <div id="frames">
     <div id="left-pane" class="pane">
-      <Tree :treeitems=treeItems />
+      <NodeTree :treeitems="galleryTree" />
+      <NodeTree :treeitems="importsTree" />
+      <NodeTree :treeitems="recycleBinTree" />
     </div>
     <div id="content"></div>
     <div id="right-pane" class="pane"></div>
@@ -11,73 +13,75 @@
 
 <script>
 import Menubar from './components/Menubar.vue';
-import Tree from './components/Tree.vue';
+import NodeTree from './components/NodeTree.vue';
 
 export default {
   name: 'App',
   components: {
     Menubar,
-    Tree
+    NodeTree
   },
   data() {
     return {
-      treeItems: [
-        {id: '0', name: 'Galería', children: [
-          {id: '0-0', name: '2021', children: [
-            {id: '0-0-0', name: '01', children: [
-              {id: '0-0-0-0', name: '01'},
-              {id: '0-0-0-1', name: '02'},
-              {id: '0-0-0-2', name: '03'},
-              {id: '0-0-0-3', name: '04'},
-              {id: '0-0-0-4', name: '05'}
+      galleryTree: {
+        id: 'Galería', name: 'Galería', children: [
+          {id: 'Galería/2021', name: '2021', children: [
+            {id: 'Galería/2021/01', name: '01', children: [
+              {id: 'Galería/2021/01/01', name: '01'},
+              {id: 'Galería/2021/01/02', name: '02'},
+              {id: 'Galería/2021/01/03', name: '03'},
+              {id: 'Galería/2021/01/04', name: '04'},
+              {id: 'Galería/2021/01/05', name: '05'}
             ]},
-            {id: '0-0-1', name: '02', children: [
-              {id: '0-0-1-0', name: '01'},
-              {id: '0-0-1-1', name: '02'},
-              {id: '0-0-1-2', name: '03'},
-              {id: '0-0-1-3', name: '04'},
-              {id: '0-0-1-4', name: '05'}
+            {id: 'Galería/2021/02', name: '02', children: [
+              {id: 'Galería/2021/02/01', name: '01'},
+              {id: 'Galería/2021/02/02', name: '02'},
+              {id: 'Galería/2021/02/03', name: '03'},
+              {id: 'Galería/2021/02/04', name: '04'},
+              {id: 'Galería/2021/02/05', name: '05'}
             ]},
-            {id: '0-0-2', name: '03', children: [
-              {id: '0-0-2-0', name: '01'},
-              {id: '0-0-2-1', name: '02'},
-              {id: '0-0-2-2', name: '03'},
-              {id: '0-0-2-3', name: '04'},
-              {id: '0-0-2-4', name: '05'}
+            {id: 'Galería/2021/03', name: '03', children: [
+              {id: 'Galería/2021/03/01', name: '01'},
+              {id: 'Galería/2021/03/02', name: '02'},
+              {id: 'Galería/2021/03/03', name: '03'},
+              {id: 'Galería/2021/03/04', name: '04'},
+              {id: 'Galería/2021/03/05', name: '05'}
             ]}
           ]},
-          {id: '0-1', name: '2022', children: [
-            {id: '0-1-0', name: '01', children: [
-              {id: '0-1-0-0', name: '01'},
-              {id: '0-1-0-1', name: '02'},
-              {id: '0-1-0-2', name: '03'},
-              {id: '0-1-0-3', name: '04'},
-              {id: '0-1-0-4', name: '05'}
+          {id: 'Galería/2022', name: '2022', children: [
+            {id: 'Galería/2022/01', name: '01', children: [
+              {id: 'Galería/2022/01/01', name: '01'},
+              {id: 'Galería/2022/01/02', name: '02'},
+              {id: 'Galería/2022/01/03', name: '03'},
+              {id: 'Galería/2022/01/04', name: '04'},
+              {id: 'Galería/2022/01/05', name: '05'}
             ]},
-            {id: '0-1-1', name: '02', children: [
-              {id: '0-1-1-0', name: '01'},
-              {id: '0-1-1-1', name: '02'},
-              {id: '0-1-1-2', name: '03'},
-              {id: '0-1-1-3', name: '04'},
-              {id: '0-1-1-4', name: '05'}
+            {id: 'Galería/2022/02', name: '02', children: [
+              {id: 'Galería/2022/02/01', name: '01'},
+              {id: 'Galería/2022/02/02', name: '02'},
+              {id: 'Galería/2022/02/03', name: '03'},
+              {id: 'Galería/2022/02/04', name: '04'},
+              {id: 'Galería/2022/02/05', name: '05'}
             ]},
-            {id: '0-1-2', name: '03', children: [
-              {id: '0-1-2-0', name: '01'},
-              {id: '0-1-2-1', name: '02'},
-              {id: '0-1-2-2', name: '03'},
-              {id: '0-1-2-3', name: '04'},
-              {id: '0-1-2-4', name: '05'}
+            {id: 'Galería/2022/03', name: '03', children: [
+              {id: 'Galería/2022/03/01', name: '01'},
+              {id: 'Galería/2022/03/02', name: '02'},
+              {id: 'Galería/2022/03/03', name: '03'},
+              {id: 'Galería/2022/03/04', name: '04'},
+              {id: 'Galería/2022/03/05', name: '05'}
             ]}
           ]}
-        ]},
-        {id: '1', name: 'Importaciones', children: [
-          {id: '1-0', name: '2021-03-01'},
-          {id: '1-1', name: '2021-03-02'},
-          {id: '1-2', name: '2021-03-03'},
-          {id: '1-3', name: '2021-03-04'},
-        ]},
-        {id: '2', name: 'Papelera'}
-      ]
+        ]
+      },
+      importsTree: {
+        id: 'Importaciones', name: 'Importaciones', children: [
+          {id: 'Importaciones/2021-03-01', name: '2021-03-01'},
+          {id: 'Importaciones/2021-03-02', name: '2021-03-02'},
+          {id: 'Importaciones/2021-03-03', name: '2021-03-03'},
+          {id: 'Importaciones/2021-03-04', name: '2021-03-04'},
+        ]
+      },
+      recycleBinTree: {id: 'Papelera', name: 'Papelera'}
     };
   }
 };

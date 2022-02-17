@@ -1,8 +1,9 @@
 <template>
   <details v-for="item in treeitems" :key="item.id">
-    <summary>{{ item.name }}</summary>
+    <summary><div>{{ item.name }}</div></summary>
     <Tree :treeitems=item.children />
   </details>
+  <!-- <i class="ri-arrow-right-s-line"></i> -->
 </template>
 
 <script>
@@ -16,18 +17,18 @@ export default {
 
 <style scoped>
 details {
-  /* position: relative; */
+  position: relative;
 }
 
 details details {
-  /* padding-left: 1rem; */
+  padding-left: 1rem;
 }
 
 summary {
-  /* list-style-type: none; */
-  /* cursor: pointer; */
+  list-style-type: none;
+  cursor: pointer;
   
-  /* padding-left: 1rem; */
+  padding-left: 1rem;
 }
 
 summary:hover {
@@ -35,13 +36,13 @@ summary:hover {
 }
 
 summary::before {
-  /* font-family: 'remixicon'; */
-  /* content: "\ea6e"; */
-  /* position: absolute; */
-  /* left: 0rem; */
+  font-family: 'remixicon';
+  content: "\ea6e";
+  position: absolute;
+  left: 0rem;
 }
 
 details[open] > summary::before {
-  /* transform: rotate(90deg); */
+  transform: rotate(90deg);
 }
 </style>
